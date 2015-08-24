@@ -3,9 +3,13 @@
 Installation steps
 
 1.Clone the repo from https://github.com/divyanshmadan/RoR-Demo
+
 2.Check the specs below
+
 3.Run bundle && bundle exec rake db:setup
+
 4.To start a development server run rails s Puma
+
 5.Username and password 
 Username : <personname>
 Password : newrelic_pw
