@@ -1,0 +1,36 @@
+<div clas="panel-body">
+  <h3 align="center"> Welcome <%= current_user.name %> </h1>
+  <h4 align="center"> Today's Date: <%= Date.today %> </h4>
+  <br>
+</div>
+
+<table class="table table-striped table-bordered">
+<caption class="text-center">Your Upcoming Shifts</caption>
+  <thead>
+    <tr>
+      <th class="text-center">Date</th>
+      <th class="text-center">Mark Unavailable</th>
+      <th class="text-center">Swap With Another User</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @shifts.each do |shift| %>
+      <tr>
+        <td class="text-center"><%= shift.date %></td>
+        <td class="text-center">
+          <%= form_tag shift_path(shift), method: :put do %>
+            <%= submit_tag "Mark Unavailable", class: "btn-small btn-danger" %>
+          <% end %>
+        </td>
+        <td class="text-center">
+          <%= form_tag shift_path(shift), method: :put do %>
+            <%= collection_select( :shift, :user_id, @guards, :id, :name) %>
+            <%= submit_tag "Swap!" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
