@@ -11,7 +11,8 @@ Installation steps
 4.To start a development server run rails s Puma
 
 5.Username and password 
-Username : <personname>
+
+Username : username specified in the array
 Password : newrelic_pw
 
 6.Check the .demo.yml file for build information
